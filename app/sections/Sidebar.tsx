@@ -33,9 +33,9 @@ export default function Sidebar() {
         
         
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm pr-12">
-          I am a Computer Engineering student focusing on networking, security, and automation. 
-          I love turning complex network problems into working systems that are actually reliable 
-          and secure. I’m passionate about learning new technologies and applying them to real-world challenges. :)
+          I am a final-year Computer Engineering student focusing on networking, security, and automation. 
+          I love turning complex network problems into working, reliable systems within simulated lab environments. 
+          I’m passionate about learning new technologies and am currently seeking a Network Engineering internship to apply my skills to real-world challenges. :)
         </p>
         {/* Contact Badges */}
         <div className="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
@@ -49,7 +49,7 @@ export default function Sidebar() {
             <span>GitHub</span>
           </a>
           <a 
-            href="https://linkedin.com/in/supakitt/"
+            href="https://www.linkedin.com/in/supakit1"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 py-2 bg-blue-50/70 dark:bg-blue-900/10 border border-blue-100/60 dark:border-blue-800/30 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-100/80 dark:hover:bg-blue-900/25 hover:text-blue-700 dark:hover:text-blue-300 transition-all text-sm"

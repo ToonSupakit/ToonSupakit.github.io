@@ -24,7 +24,7 @@ export default function Education() {
                   Mae Fah Luang University
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-2">
-                  Applied Digital Technology (ADT)
+                  Applied Digital Technology (ADT) - Computer Engineering
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
                   <span className="flex items-center gap-1">
@@ -33,7 +33,7 @@ export default function Education() {
                   </span>
                   <span className="flex items-center gap-1">
                     <Award className="w-4 h-4" />
-                    GPA: 3.18/4.00
+                    GPA: 3.27/4.00
                   </span>
                 </div>
                 {/* <p className="mt-4 text-slate-600 dark:text-slate-400">

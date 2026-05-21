@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/animated-section";
 import { Github, Network, Bot, Wind, Play, X } from "lucide-react";
-
 const projects = [
   {
     title: "Enterprise Network Design",
@@ -17,38 +16,64 @@ const projects = [
       "Deployed Inter-VLAN routing via SVIs on dual multilayer switches (3560) with DHCP relay (ip helper-address) forwarding requests to a centralized server.",
       "Configured PAT (NAT Overload) with dual ISP failover (floating static route AD=70) to ensure internet connectivity redundancy."
     ],
-    technologies: ["OSPF", "IPSec VPN", "VLAN", "DHCP Relay", "NAT", "Layer 3 Switch", "Cisco IOS"],
     githubUrl: "https://github.com/ToonSupakit/Enterprise-Hospital-Network",
     videoUrl: "/videos/cild-cisco.mp4",
   },
   {
-    title: "Network AI Monitor",
+    title: "Network AI Monitor ",
     description:
-      "Developed a network anomaly monitoring system that collects real-time interface metrics (load, error rates, uptime) using SNMPv2c/v3.",
+      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest ML model to detect anomalies based on historical data, and features a Flask dashboard with a Discord Bot for alerts and CLI remediation.",
     icon: Bot,
     achievements: [
-      "Implemented an anomaly classification engine combining rule-based checks and a Machine Learning model (Isolation Forest) trained on historical network baselines.",
-      "Built a real-time admin dashboard using Flask and Socket.IO for traffic visualization, user access control, and dynamic system configuration.",
-      "Integrated an automated remediation loop via a Discord Bot, generating vendor-specific CLI commands (Cisco, MikroTik, Arista) via Netmiko to resolve network issues directly from alert buttons."
+      "Anomaly Detection Experiment: Combines standard network threshold checks with an Isolation Forest Machine Learning model to classify interface issues in a lab topology.",
+      "Scheduled Model Retraining: Implemented a Python script to periodically retrain the ML model using historical database metrics, allowing it to adapt to changing network traffic.",
+      "Automated & Manual Remediation: Configured triggers for automated script execution (self-healing) and allowed manual overrides via the Web Dashboard or Discord bot.",
+      "Discord Bot Integration: Built a Discord bot to push real-time alerts and accept simple admin commands (e.g., Approve Fix, Rate Limit) through interactive UI buttons.",
+      "Multi-Vendor Testing (Lab Environment): Used Netmiko to translate remediation actions into vendor-specific CLI commands, successfully tested on simulated Cisco and MikroTik devices.",
+      "Real-time Web Dashboard: Created a Flask-based web interface to display network health, visualize metrics, and view system logs in real time.",
+      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User) and CSRF verification. Also wrote basic unit tests using pytest and experimented with GitHub Actions for CI."
     ],
-    technologies: ["Python", "Flask", "Scikit-Learn", "MySQL", "SQLAlchemy", "Netmiko", "SNMP", "Socket.IO"],
+    tools: [
+      "Programming: Python, JavaScript, HTML5, CSS3",
+      "Machine Learning: Scikit-learn (Isolation Forest)",
+      "Network & Automation: Netmiko, SNMP (PySNMP)",
+      "Web & Database: Flask (Flask-SocketIO), MySQL, SQLAlchemy",
+      "Third-Party Integration: Discord API (Discord.py)",
+      "Dev Tools & Infrastructure: Pytest, GitHub Actions, GNS3 (Cisco IOS virtual routers)"
+    ],
     githubUrl: "https://github.com/ToonSupakit/AI_Network",
     videoUrl: "/videos/clip-ai-network.mp4",
+    imageUrl: "/diagram-AI2.png",
   },
   {
     title: "Smart Air & Automated System",
     description:
-      "IoT system collecting real-time PM2.5, CO2, and temperature/humidity data via ESP32 sensors, with automated dual-fan ventilation control and a live web dashboard for air quality visualization.",
+      "Automated Fan Control: Automatically turns on the 5V DC ventilation fans (simulating room ventilation) when pollution exceeds the threshold and turns them off when air quality returns to normal, controlled via a Relay Module.",
     icon: Wind,
     achievements: [
-      "Developed firmware for ESP32 utilizing C++/Arduino to collect environmental telemetry data including PM2.5, CO2, temperature, and humidity.",
-      "Implemented dynamic dual-fan ventilation automation logic based on real-time sensor readings and health safety thresholds.",
-      "Built a high-performance Express & Node.js backend using Socket.IO to stream telemetry data instantly to a web dashboard.",
-      "Integrated a MySQL database layer to log environmental data for historical visualization and analysis."
+      "Air Pollution Monitoring: Measures PM2.5, CO2, flammable gas/smoke, temperature, and humidity from multiple sensors simultaneously",
+      "Real-time Update: Sensor data is pushed to the Web Dashboard via WebSocket (Socket.IO) without page refresh",
+      "Automated Fan Control: Automatically turns on the 5V DC ventilation fans when pollution exceeds the threshold and turns it off when air quality returns to normal, controlled via Relay Module",
+      "AQI Calculation: Calculates Air Quality Index based on US EPA standards and displays it on the Dashboard",
+      "Data Logging & History: Continuously records sensor data to MySQL and displays PM2.5 history charts via Chart.js",
+      "Smart Alerts: Shows on-screen alerts when PM2.5 reaches hazardous levels, with alert history logging"
     ],
-    technologies: ["ESP32", "C++", "Arduino", "Node.js", "Express", "Socket.IO", "MySQL", "HTML", "CSS", "JavaScript"],
+    tools: [
+      "Microcontroller: ESP32",
+      "Firmware: C++ (Arduino IDE)",
+      "Backend server: Node.js, Express.js",
+      "Real-time communication: Socket.IO",
+      "Database: MySQL",
+      "Frontend: HTML5, CSS3, JavaScript",
+      "Charting: Chart.js",
+      "Dust sensor: PMS5003 (Serial/UART)",
+      "Temperature & humidity sensor: AHT10 (I2C)",
+      "Air quality sensor: ENS160 (I2C) — measures CO2, eCO2, TVOC",
+      "Gas/Smoke sensor: MQ-2 (Analog)"
+    ],
     githubUrl: "https://github.com/ToonSupakit/iot-project",
     videoUrl: "/videos/iot.mp4",
+    imageUrl: "/iot-diagram3.png",
   },
 ];
 
@@ -74,48 +99,132 @@ const itemVariants = {
   },
 };
 
-const techUrls: Record<string, string> = {
-  "Python": "https://www.python.org/",
-  "Netmiko": "https://github.com/ktbyers/netmiko",
-  "MySQL": "https://www.mysql.com/",
-  "SQLAlchemy": "https://www.sqlalchemy.org/",
-  "YAML": "https://yaml.org/",
-  "GNS3": "https://www.gns3.com/",
-  "Cisco IOS": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/index.html",
+// Tech keyword → URL mapping for inline highlighting
+const techLinks: Record<string, string> = {
   "OSPF": "https://en.wikipedia.org/wiki/Open_Shortest_Path_First",
-  "VLAN": "https://en.wikipedia.org/wiki/Virtual_LAN",
-  "NAT": "https://en.wikipedia.org/wiki/Network_address_translation",
-  "DHCP Relay": "https://en.wikipedia.org/wiki/DHCP_helper_address",
   "IPSec VPN": "https://en.wikipedia.org/wiki/IPsec",
-  "Layer 3 Switch": "https://en.wikipedia.org/wiki/Layer_3_switch",
+  "IPSec": "https://en.wikipedia.org/wiki/IPsec",
+  "VLAN": "https://en.wikipedia.org/wiki/Virtual_LAN",
+  "Inter-VLAN": "https://en.wikipedia.org/wiki/Virtual_LAN",
+  "DHCP relay": "https://en.wikipedia.org/wiki/DHCP_helper_address",
+  "DHCP": "https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol",
+  "NAT Overload": "https://en.wikipedia.org/wiki/Network_address_translation",
+  "NAT": "https://en.wikipedia.org/wiki/Network_address_translation",
+  "PAT": "https://en.wikipedia.org/wiki/Network_address_translation",
+  "Layer 3": "https://en.wikipedia.org/wiki/Layer_3_switch",
+  "Cisco IOS": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/index.html",
+  "Cisco": "https://www.cisco.com/",
+  "Isolation Forest": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html",
+  "Scikit-learn": "https://scikit-learn.org/",
+  "Python": "https://www.python.org/",
   "Flask": "https://flask.palletsprojects.com/",
-  "Scikit-Learn": "https://scikit-learn.org/",
-  "SNMP": "https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol",
+  "Flask-SocketIO": "https://flask-socketio.readthedocs.io/",
   "Socket.IO": "https://socket.io/",
+  "WebSocket": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+  "Netmiko": "https://github.com/ktbyers/netmiko",
+  "SNMP": "https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol",
+  "PySNMP": "https://pysnmp.readthedocs.io/",
+  "MySQL": "https://www.mysql.com/",
+  "SQLite": "https://www.sqlite.org/",
+  "SQLAlchemy": "https://www.sqlalchemy.org/",
+  "Discord.py": "https://discordpy.readthedocs.io/",
+  "Discord API": "https://discord.com/developers/docs/intro",
+  "Discord": "https://discord.com/",
+  "GitHub Actions": "https://github.com/features/actions",
+  "GNS3": "https://www.gns3.com/",
+  "Pytest": "https://docs.pytest.org/",
+  "pytest": "https://docs.pytest.org/",
+  "Arista": "https://www.arista.com/",
+  "MikroTik": "https://mikrotik.com/",
+  "Juniper": "https://www.juniper.net/",
   "ESP32": "https://www.espressif.com/en/products/socs/esp32",
-  "C++": "https://en.cppreference.com/",
+  "Arduino IDE": "https://www.arduino.cc/en/software",
   "Arduino": "https://www.arduino.cc/",
+  "C++": "https://en.cppreference.com/",
   "Node.js": "https://nodejs.org/",
+  "Express.js": "https://expressjs.com/",
   "Express": "https://expressjs.com/",
-  "HTML": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-  "CSS": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-  "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  "Chart.js": "https://www.chartjs.org/",
+  "HTML5": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  "CSS3": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  "PMS5003": "https://www.adafruit.com/product/3686",
+  "AHT10": "https://learn.adafruit.com/adafruit-aht20",
+  "ENS160": "https://www.sciosense.com/products/environmental-sensors/ens160-digital-metal-oxide-multi-gas-sensor/",
+  "MQ-2": "https://www.sparkfun.com/products/9405",
+  "Relay Module": "https://en.wikipedia.org/wiki/Relay",
+  "AES-256": "https://en.wikipedia.org/wiki/Advanced_Encryption_Standard",
+  "CSRF": "https://en.wikipedia.org/wiki/Cross-site_request_forgery",
+  "Ruff": "https://docs.astral.sh/ruff/",
+  "Black": "https://black.readthedocs.io/",
+  "PM2.5": "https://en.wikipedia.org/wiki/Particulates",
+  "CO2": "https://en.wikipedia.org/wiki/Carbon_dioxide",
+  "AQI": "https://en.wikipedia.org/wiki/Air_quality_index",
+  "US EPA": "https://www.epa.gov/",
+  "SSE": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events",
 };
+
+// Sort keywords by length (longest first) to avoid partial matches
+const sortedTechKeys = Object.keys(techLinks).sort((a, b) => b.length - a.length);
+
+function highlightTech(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let keyIndex = 0;
+
+  while (remaining.length > 0) {
+    let earliestIndex = remaining.length;
+    let matchedKey = "";
+
+    for (const key of sortedTechKeys) {
+      const idx = remaining.indexOf(key);
+      if (idx !== -1 && idx < earliestIndex) {
+        earliestIndex = idx;
+        matchedKey = key;
+      }
+    }
+
+    if (matchedKey) {
+      // Add text before the match
+      if (earliestIndex > 0) {
+        parts.push(remaining.substring(0, earliestIndex));
+      }
+      // Add the linked keyword
+      parts.push(
+        <a
+          key={`tech-${keyIndex++}`}
+          href={techLinks[matchedKey]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline transition-colors"
+        >
+          {matchedKey}
+        </a>
+      );
+      remaining = remaining.substring(earliestIndex + matchedKey.length);
+    } else {
+      parts.push(remaining);
+      remaining = "";
+    }
+  }
+
+  return parts;
+}
 
 export default function Projects() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [videoTitle, setVideoTitle] = useState<string>("");
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [imageTitle, setImageTitle] = useState<string>("");
 
   return (
     <section id="projects" className="pt-0 pb-0">
       <div>
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8">
             Featured Projects
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-8">
-            Selected projects showcasing my expertise in networking and automation
-          </p>
+          
         </AnimatedSection>
  
         <motion.div
@@ -123,19 +232,17 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="space-y-10"
+          className="border-t border-slate-300 dark:border-slate-700 pt-10 divide-y divide-slate-300 dark:divide-slate-700 space-y-12"
         >
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className="transition-all"
+              className="transition-all pt-12 first:pt-0"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-50 dark:bg-blue-950/40 rounded-lg">
-                    <project.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  </div>
+                  
                   <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
                     {project.title}
                   </h3>
@@ -170,29 +277,45 @@ export default function Projects() {
               </p>
  
               <div className="space-y-3 mb-6">
+                <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider">Key Features</h4>
                 {project.achievements.map((achievement, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-blue-400 dark:bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0" />
                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {achievement}
+                      {highlightTech(achievement)}
                     </p>
                   </div>
                 ))}
               </div>
- 
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <a
-                    key={tech}
-                    href={techUrls[tech] || `https://en.wikipedia.org/wiki/${encodeURIComponent(tech)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1 text-xs font-semibold bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800/40 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 hover:scale-105 transition-all duration-200"
-                  >
-                    {tech}
-                  </a>
-                ))}
-              </div>
+
+              {project.tools && project.tools.length > 0 && (
+                <div className="space-y-3 mb-6">
+                  <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider">Tools / Technologies</h4>
+                  {project.tools.map((tool, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0" />
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {highlightTech(tool)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {project.imageUrl && (
+                <div 
+                  onClick={() => {
+                    setActiveImage(project.imageUrl);
+                    setImageTitle(project.title);
+                  }}
+                  className="mt-5 overflow-hidden rounded-xl border border-slate-200/60 dark:border-slate-800/50 bg-white dark:bg-slate-900 shadow-sm max-w-full cursor-zoom-in hover:opacity-90 hover:border-blue-400/45 dark:hover:border-blue-500/35 transition-all duration-200"
+                >
+                  <img
+                    src={project.imageUrl}
+                    alt={`${project.title} Architecture`}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -236,6 +359,50 @@ export default function Projects() {
                   controls
                   autoPlay
                   className="w-full h-full max-h-[70vh] object-contain"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Image Modal Overlay */}
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md"
+            onClick={() => setActiveImage(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 text-base">
+                  {imageTitle} - Architecture Diagram
+                </h3>
+                <button
+                  onClick={() => setActiveImage(null)}
+                  className="p-1 rounded-full text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Image Container */}
+              <div className="bg-slate-950 flex items-center justify-center p-2 max-h-[80vh] overflow-auto">
+                <img
+                  src={activeImage}
+                  alt={`${imageTitle} Architecture`}
+                  className="max-w-full h-auto max-h-[75vh] object-contain rounded-lg"
                 />
               </div>
             </motion.div>

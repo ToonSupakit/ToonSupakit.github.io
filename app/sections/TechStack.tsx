@@ -24,14 +24,12 @@ export default function TechStack() {
               <span className="font-bold text-black dark:text-white mr-1">Network Services & Security:</span> DHCP, NAT/PAT, ACLs, VPN, Network Security
             </li>
             <li>
-              <span className="font-bold text-black dark:text-white mr-1">Network Tools:</span> Cisco Packet Tracer, GNS3, Wireshark, TFTP Server,
+              <span className="font-bold text-black dark:text-white mr-1">Network Tools:</span> Cisco Packet Tracer, GNS3, TFTP Server,
             </li>
             <li>
               <span className="font-bold text-black dark:text-white mr-1">Programming & Automation:</span> Python, JavaScript, HTML, NodeJS, MySQL
             </li>
-            <li>
-              <span className="font-bold text-black dark:text-white mr-1">Other:</span> Linux (Ubuntu), Windows
-            </li>
+          
           </ul>
         </div>
       </div>

@@ -25,7 +25,7 @@ const certificateData: CertificateCategory[] = [
     certificates: [
       {
         id: "ccna",
-        name: "CCNA - Cisco Certified Network Associate",
+        name: "CCNA (Cisco Certified Network Associate) Training udemy",
         organization: "Udemy / Cisco",
         date: "2026",
         description: "Comprehensive CCNA course covering network fundamentals, routing, switching, and network automation.",
