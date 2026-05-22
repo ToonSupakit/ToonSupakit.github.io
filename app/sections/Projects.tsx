@@ -247,26 +247,29 @@ export default function Projects() {
                     {project.title}
                   </h3>
                 </div>
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-x-2 text-sm text-slate-400 dark:text-slate-500">
                   {project.videoUrl && (
                     <button
                       onClick={() => {
                         setActiveVideo(project.videoUrl);
                         setVideoTitle(project.title);
                       }}
-                      className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg transition-all duration-200 shadow-sm shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-95"
+                      className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
                     >
-                      <Play className="w-4 h-4 fill-current" />
+                      <Play className="w-3.5 h-3.5 fill-current" />
                       <span>Watch Demo</span>
                     </button>
+                  )}
+                  {project.videoUrl && project.githubUrl && (
+                    <span>|</span>
                   )}
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200/50 dark:border-blue-900/30 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 active:scale-95"
+                    className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-3.5 h-3.5" />
                     <span>GitHub</span>
                   </a>
                 </div>
