@@ -44,7 +44,7 @@ export default function Sidebar() {
               href="/resume.png"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
             >
               Resume
             </a>
@@ -53,7 +53,7 @@ export default function Sidebar() {
               href="https://www.linkedin.com/in/supakit1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
             >
               LinkedIn
             </a>
@@ -62,7 +62,7 @@ export default function Sidebar() {
               href="https://github.com/ToonSupakit"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
             >
               GitHub
             </a>
@@ -72,7 +72,7 @@ export default function Sidebar() {
             <span>email - </span>
             <a 
               href="mailto:toonmeraipao44@gmail.com"
-              className="hover:underline transition-all"
+              className="hover:text-slate-800 dark:hover:text-slate-200 hover:font-bold transition-all"
             >
               toonmeraipao44@gmail.com
             </a>
