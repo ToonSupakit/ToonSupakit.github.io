@@ -8,19 +8,19 @@ const projects = [
   {
     title: "HQ-Branch Network Topology Design",
     description:
-      "Designed and configured a dual-site network (HQ + Branch) spanning 12 departments and 13 VLANs across simulated Layer 2 and Layer 3 infrastructure.",
+      "Designed and configured a dual-site network (HQ + Branch) spanning 12 departments and 13 VLANs across simulated Layer 2 and Layer 3 .",
     icon: Network,
     achievements: [
       "Configured OSPF Area 0 on routers and Layer 3 switches with route summarization, reducing routing table size and improving convergence.",
       "Implemented a site-to-site IPSec VPN tunnel (AES-256, DH Group 5) over serial links between HQ and Branch routers, validating secure communication and traffic encapsulation.",
       "Deployed Inter-VLAN routing via SVIs on dual multilayer switches (3560) with DHCP relay (ip helper-address) forwarding requests to a centralized server.",
-      "Configured PAT (NAT Overload) with dual ISP failover (floating static route AD=70) to ensure internet connectivity redundancy."
+      "Configured PAT (NAT Overload) with dual ISP failover) to ensure internet connectivity redundancy."
     ],
-    githubUrl: "https://github.com/ToonSupakit/Enterprise-Hospital-Network",
+    githubUrl: "https://github.com/ToonSupakit/HQ-Branch-Network-Topology-Design",
     videoUrl: "/videos/cild-cisco.mp4",
   },
   {
-    title: "Network AI Monitor ",
+    title: "Network AI Monitor",
     description:
       "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest ML model to detect anomalies based on historical data, and features a Flask dashboard with a Discord Bot for alerts and CLI remediation.",
     icon: Bot,
@@ -28,20 +28,20 @@ const projects = [
       "Anomaly Detection Experiment: Combines standard network threshold checks with an Isolation Forest Machine Learning model to classify interface issues in a lab topology.",
       "Scheduled Model Retraining: Implemented a Python script to periodically retrain the ML model using historical database metrics, allowing it to adapt to changing network traffic.",
       "Automated & Manual Remediation: Configured triggers for automated script execution (self-healing) and allowed manual overrides via the Web Dashboard or Discord bot.",
-      "Discord Bot Integration: Built a Discord bot to push real-time alerts and accept simple admin commands (e.g., Approve Fix, Rate Limit) through interactive UI buttons.",
-      "Multi-Vendor Testing (Lab Environment): Used Netmiko to translate remediation actions into vendor-specific CLI commands, successfully tested on simulated Cisco and MikroTik devices.",
+      "Discord Bot Integration: Built a Discord bot to push real-time alerts and accept simple admin commands (e.g.,Fix, Rate Limit) through interactive UI buttons.",
+      "Multi-Vendor Testing (Lab Environment): Used Netmiko to translate remediation actions into vendor-specific CLI commands, successfully tested on simulated Cisco devices.",
       "Real-time Web Dashboard: Created a Flask-based web interface to display network health, visualize metrics, and view system logs in real time.",
-      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User) and CSRF verification. Also wrote basic unit tests using pytest and experimented with GitHub Actions for CI."
+      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User) and CSRF verification. Also wrote basic unit tests using pytest."
     ],
     tools: [
       "Programming: Python, JavaScript, HTML5, CSS3",
       "Machine Learning: Scikit-learn (Isolation Forest)",
       "Network & Automation: Netmiko, SNMP (PySNMP)",
-      "Web & Database: Flask (Flask-SocketIO), MySQL, SQLAlchemy",
+      "Web & Database: Flask (Flask-SocketIO), MySQL",
       "Third-Party Integration: Discord API (Discord.py)",
-      "Dev Tools & Infrastructure: Pytest, GitHub Actions, GNS3 (Cisco IOS virtual routers)"
+   
     ],
-    githubUrl: "https://github.com/ToonSupakit/AI_Network",
+    githubUrl: "https://github.com/ToonSupakit/NetSentinelAI-Network",
     videoUrl: "/videos/clip-ai-network.mp4",
     imageUrl: "/architecture-ai-network2.png",
   },
