@@ -66,7 +66,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/in/supakitt/"
+              href="https://www.linkedin.com/in/supakit1/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-4 rounded-xl hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all duration-300 group"
