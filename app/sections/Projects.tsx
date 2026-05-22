@@ -6,7 +6,7 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Github, Network, Bot, Wind, Play, X } from "lucide-react";
 const projects = [
   {
-    title: "HQ-Branch Network Topology & Security Design",
+    title: "HQ-Branch Network Topology Design",
     description:
       "Designed and configured a dual-site network (HQ + Branch) spanning 12 departments and 13 VLANs across simulated Layer 2 and Layer 3 infrastructure.",
     icon: Network,
