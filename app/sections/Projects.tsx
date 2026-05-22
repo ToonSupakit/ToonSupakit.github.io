@@ -196,7 +196,7 @@ function highlightTech(text: string): React.ReactNode[] {
           href={techLinks[matchedKey]}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline transition-colors"
+          className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:font-bold transition-all"
         >
           {matchedKey}
         </a>
