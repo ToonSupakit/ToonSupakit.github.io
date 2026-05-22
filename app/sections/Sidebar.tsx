@@ -34,7 +34,7 @@ export default function Sidebar() {
         
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm pr-12">
           I am a final-year Computer Engineering student focusing on networking, security, and automation. 
-          I love turning complex network problems into working, reliable systems within simulated lab environments. 
+          I love designing, configuring, and automating network topologies within simulated environments to solve routing, security, and connectivity challenges. 
           I’m passionate about learning new technologies and am currently seeking a Network Engineering internship to apply my skills to real-world challenges. :)
         </p>
         {/* Contact Links */}

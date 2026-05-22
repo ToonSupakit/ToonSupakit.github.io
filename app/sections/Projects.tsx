@@ -6,13 +6,13 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Github, Network, Bot, Wind, Play, X } from "lucide-react";
 const projects = [
   {
-    title: "Enterprise Network Design",
+    title: "HQ-Branch Network Topology & Security Design",
     description:
-      "Designed and deployed a dual-site enterprise network (HQ + Branch) spanning 12 departments and 13 VLANs across Layer 2 and Layer 3 infrastructure.",
+      "Designed and configured a dual-site network (HQ + Branch) spanning 12 departments and 13 VLANs across simulated Layer 2 and Layer 3 infrastructure.",
     icon: Network,
     achievements: [
       "Configured OSPF Area 0 on routers and Layer 3 switches with route summarization, reducing routing table size and improving convergence.",
-      "Implemented a site-to-site IPSec VPN tunnel (AES-256, DH Group 5) over serial links between HQ and Branch routers; verified encrypted traffic with 0% packet loss.",
+      "Implemented a site-to-site IPSec VPN tunnel (AES-256, DH Group 5) over serial links between HQ and Branch routers, validating secure communication and traffic encapsulation.",
       "Deployed Inter-VLAN routing via SVIs on dual multilayer switches (3560) with DHCP relay (ip helper-address) forwarding requests to a centralized server.",
       "Configured PAT (NAT Overload) with dual ISP failover (floating static route AD=70) to ensure internet connectivity redundancy."
     ],
