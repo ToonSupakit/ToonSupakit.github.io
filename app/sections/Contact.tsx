@@ -89,9 +89,7 @@ export default function Contact() {
             <p className="text-sm text-slate-500 dark:text-slate-400">
               © {new Date().getFullYear()} Supakit Chusing. All rights reserved.
             </p>
-            <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
-              Built with Next.js, Tailwind CSS & Framer Motion
-            </p>
+            
           </div>
         </AnimatedSection>
       </div>
