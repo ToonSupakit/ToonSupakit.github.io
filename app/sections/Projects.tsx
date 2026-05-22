@@ -43,7 +43,7 @@ const projects = [
     ],
     githubUrl: "https://github.com/ToonSupakit/AI_Network",
     videoUrl: "/videos/clip-ai-network.mp4",
-    imageUrl: "/diagram-AI2.png",
+    imageUrl: "/architecture-ai-network2.png",
   },
   {
     title: "Smart Air & Automated System",
@@ -73,7 +73,7 @@ const projects = [
     ],
     githubUrl: "https://github.com/ToonSupakit/iot-project",
     videoUrl: "/videos/iot.mp4",
-    imageUrl: "/iot-diagram3.png",
+    imageUrl: "/architecture-iot2.png",
   },
 ];
 
