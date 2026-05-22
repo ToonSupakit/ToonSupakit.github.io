@@ -17,7 +17,7 @@ const projects = [
       "Configured PAT (NAT Overload) with dual ISP failover (floating static route AD=70) to ensure internet connectivity redundancy."
     ],
     githubUrl: "https://github.com/ToonSupakit/Enterprise-Hospital-Network",
-    videoUrl: "/Portfolio/videos/cild-cisco.mp4",
+    videoUrl: "/videos/cild-cisco.mp4",
   },
   {
     title: "Network AI Monitor ",
@@ -42,8 +42,8 @@ const projects = [
       "Dev Tools & Infrastructure: Pytest, GitHub Actions, GNS3 (Cisco IOS virtual routers)"
     ],
     githubUrl: "https://github.com/ToonSupakit/AI_Network",
-    videoUrl: "/Portfolio/videos/clip-ai-network.mp4",
-    imageUrl: "/Portfolio/diagram-AI2.png",
+    videoUrl: "/videos/clip-ai-network.mp4",
+    imageUrl: "/diagram-AI2.png",
   },
   {
     title: "Smart Air & Automated System",
@@ -72,8 +72,8 @@ const projects = [
       "Gas/Smoke sensor: MQ-2 (Analog)"
     ],
     githubUrl: "https://github.com/ToonSupakit/iot-project",
-    videoUrl: "/Portfolio/videos/iot.mp4",
-    imageUrl: "/Portfolio/iot-diagram3.png",
+    videoUrl: "/videos/iot.mp4",
+    imageUrl: "/iot-diagram3.png",
   },
 ];
 

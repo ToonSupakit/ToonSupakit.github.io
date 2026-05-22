@@ -16,7 +16,7 @@ export default function Sidebar() {
       <div className="relative mx-auto sm:mx-0 w-fit">
         <div className="w-40 h-40 sm:w-44 sm:h-44 xl:w-48 xl:h-48 rounded-full shadow-2xl ring-8 ring-slate-200 dark:ring-slate-700 overflow-hidden bg-slate-200 dark:bg-slate-700">
           <img
-            src="/Portfolio/profile.jpg"
+            src="/profile.jpg"
             alt="Supakit Chusing"
             className="w-full h-full object-cover"
           />
