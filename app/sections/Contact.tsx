@@ -77,7 +77,7 @@ export default function Contact() {
               <div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">LinkedIn</p>
                 <p className="text-slate-900 dark:text-slate-100 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  supakitt
+                  supakit
                 </p>
               </div>
             </a>
