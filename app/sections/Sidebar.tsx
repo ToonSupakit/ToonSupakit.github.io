@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+
 
 export default function Sidebar() {
   return (
@@ -37,33 +37,46 @@ export default function Sidebar() {
           I love turning complex network problems into working, reliable systems within simulated lab environments. 
           I’m passionate about learning new technologies and am currently seeking a Network Engineering internship to apply my skills to real-world challenges. :)
         </p>
-        {/* Contact Badges */}
-        <div className="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
-          <a 
-            href="https://github.com/ToonSupakit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 bg-blue-50/70 dark:bg-blue-900/10 border border-blue-100/60 dark:border-blue-800/30 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-100/80 dark:hover:bg-blue-900/25 hover:text-blue-700 dark:hover:text-blue-300 transition-all text-sm"
-          >
-            <Github className="w-4 h-4" />
-            <span>GitHub</span>
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/supakit1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 bg-blue-50/70 dark:bg-blue-900/10 border border-blue-100/60 dark:border-blue-800/30 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-100/80 dark:hover:bg-blue-900/25 hover:text-blue-700 dark:hover:text-blue-300 transition-all text-sm"
-          >
-            <Linkedin className="w-4 h-4" />
-            <span>LinkedIn</span>
-          </a>
-          <a 
-            href="mailto:toonmeraipao44@gmail.com"
-            className="flex items-center gap-2 px-3 py-2 bg-blue-50/70 dark:bg-blue-900/10 border border-blue-100/60 dark:border-blue-800/30 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-100/80 dark:hover:bg-blue-900/25 hover:text-blue-700 dark:hover:text-blue-300 transition-all text-sm"
-          >
-            <Mail className="w-4 h-4" />
-            <span>toonmeraipao44@gmail.com</span>
-          </a>
+        {/* Contact Links */}
+        <div className="text-center sm:text-left pt-4 space-y-2">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-x-2 text-sm text-slate-400 dark:text-slate-500">
+            <a 
+              href="/resume.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+            >
+              Resume
+            </a>
+            <span>|</span>
+            <a 
+              href="https://www.linkedin.com/in/supakit1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+            >
+              LinkedIn
+            </a>
+            <span>|</span>
+            <a 
+              href="https://github.com/ToonSupakit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-all"
+            >
+              GitHub
+            </a>
+          </div>
+          
+          <div className="text-sm text-slate-500 dark:text-slate-400">
+            <span>email - </span>
+            <a 
+              href="mailto:toonmeraipao44@gmail.com"
+              className="hover:underline transition-all"
+            >
+              toonmeraipao44@gmail.com
+            </a>
+          </div>
         </div>
       </div>
       </motion.div>
