@@ -19,7 +19,7 @@ export default function Hero() {
             <div className="relative">
               <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full shadow-2xl ring-8 ring-slate-200 dark:ring-slate-700 overflow-hidden bg-slate-200 dark:bg-slate-700">
                 <img
-                  src="/profile.jpg"
+                  src="/Portfolio/profile.jpg"
                   alt="Supakit Chusing"
                   className="w-full h-full object-cover"
                 />

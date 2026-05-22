@@ -29,7 +29,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Udemy / Cisco",
         date: "2026",
         description: "Comprehensive CCNA course covering network fundamentals, routing, switching, and network automation.",
-        image: "/certificates/Udemy_ccna by jodoi.jpg",
+        image: "/Portfolio/certificates/Udemy_ccna by jodoi.jpg",
       },
       {
         id: "networking-basics",
@@ -37,7 +37,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Cisco Networking Academy",
         date: "2026",
         description: "Introduction to networking concepts, OSI model, TCP/IP, and basic network configuration.",
-        image: "/certificates/Networking_Basics_certificate.jpg",
+        image: "/Portfolio/certificates/Networking_Basics_certificate.jpg",
       },
       {
         id: "network-architecture",
@@ -45,7 +45,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Cisco Networking Academy",
         date: "2026",
         description: "Understanding network design principles, topologies, and architecture best practices.",
-        image: "/certificates/Network Architecture Fundamentals.jpeg",
+        image: "/Portfolio/certificates/Network Architecture Fundamentals.jpeg",
       },
       {
         id: "bits-bytes",
@@ -53,7 +53,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Google / Coursera",
         date: "2026",
         description: "Deep dive into how computer networks function, from physical layer to application layer.",
-        image: "/certificates/The Bits and Bytes of computer networking.jpeg",
+        image: "/Portfolio/certificates/The Bits and Bytes of computer networking.jpeg",
       },
     ],
   },
@@ -66,7 +66,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Microsoft",
         date: "2026",
         description: "Security, Compliance, and Identity fundamentals across cloud-based Microsoft services.",
-        image: "/certificates/Microsoft SC-900 Exam Preparation and Practice.jpeg",
+        image: "/Portfolio/certificates/Microsoft SC-900 Exam Preparation and Practice.jpeg",
       },
       {
         id: "Ethical Hacker",
@@ -74,7 +74,7 @@ const certificateData: CertificateCategory[] = [
         organization: "Cisco Networking Academy",
         date: "2026",
         description: "It teaches you to identify network vulnerabilities and apply security measures to defend against cyber attacks.",
-        image: "/certificates/Ethical_Hacker_certificate (2)_page-0001.jpg",
+        image: "/Portfolio/certificates/Ethical_Hacker_certificate (2)_page-0001.jpg",
       },
     ],
   },
