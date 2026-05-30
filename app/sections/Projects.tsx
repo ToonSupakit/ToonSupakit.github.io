@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/animated-section";
-import { Github, Network, Bot, Wind, Play, X } from "lucide-react";
+import { Github, Network, Bot, Wind, Play, X, Activity } from "lucide-react";
 const projects = [
   {
     title: "HQ-Branch Network Topology Design",
@@ -20,26 +20,25 @@ const projects = [
     videoUrl: "/videos/cild-cisco.mp4",
   },
   {
-    title: "Network AI Monitor",
+    title: "Network Monitoring & Automation System",
     description:
-      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest ML model to detect anomalies based on historical data, and features a Flask dashboard with a Discord Bot for alerts and CLI remediation.",
-    icon: Bot,
+      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest ML model to detect anomalies based on historical data, and features a sleek Flask-based admin dashboard with Socket.IO for real-time alerting and automated Cisco CLI remediation.",
+    icon: Activity,
     achievements: [
       "Anomaly Detection Experiment: Combines standard network threshold checks with an Isolation Forest Machine Learning model to classify interface issues in a lab topology.",
       "Scheduled Model Retraining: Implemented a Python script to periodically retrain the ML model using historical database metrics, allowing it to adapt to changing network traffic.",
-      "Automated & Manual Remediation: Configured triggers for automated script execution (self-healing) and allowed manual overrides via the Web Dashboard or Discord bot.",
-      "Discord Bot Integration: Built a Discord bot to push real-time alerts and accept simple admin commands (e.g.,Fix, Rate Limit) through interactive UI buttons.",
+      "Automated & Manual Remediation: Configured triggers for automated script execution (self-healing) and allowed manual overrides directly via the Web Dashboard with automated rollback timers.",
+      "Automated Config Backups: Developed an automated config backup scheduler and Git-style Diff engine to track and compare running-config changes on Cisco switches and routers over time.",
       "Multi-Vendor Testing (Lab Environment): Used Netmiko to translate remediation actions into vendor-specific CLI commands, successfully tested on simulated Cisco devices.",
-      "Real-time Web Dashboard: Created a Flask-based web interface to display network health, visualize metrics, and view system logs in real time.",
-      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User) and CSRF verification. Also wrote basic unit tests using pytest."
+      "Real-time Web Dashboard: Created a Flask-based web interface with Socket.IO to display network health, broadcast syslog state changes, and visualize metrics in real time with 0-second latency.",
+      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User), CSRF verification, and a centralized i18n system for dual-language (English/Thai) translation. Also wrote 71 automated unit tests using pytest."
     ],
     tools: [
       "Programming: Python, JavaScript, HTML5, CSS3",
       "Machine Learning: Scikit-learn (Isolation Forest)",
       "Network & Automation: Netmiko, SNMP (PySNMP)",
       "Web & Database: Flask (Flask-SocketIO), MySQL",
-      "Third-Party Integration: Discord API (Discord.py)",
-   
+      "DevOps & Environments: Docker, Docker Compose, Ubuntu Linux, VMware Workstation"
     ],
     githubUrl: "https://github.com/ToonSupakit/NetSentinelAI-Network",
     videoUrl: "/videos/clip-ai-network.mp4",
