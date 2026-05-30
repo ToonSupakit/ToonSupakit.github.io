@@ -43,7 +43,7 @@ const projects = [
     ],
     githubUrl: "https://github.com/ToonSupakit/NetSentinelAI-Network",
     videoUrl: "/videos/clip-ai-network.mp4",
-    imageUrl: "/architecture-ai-network2.png",
+    imageUrl: "/diagram-network-ai3.png",
   },
   {
     title: "Smart Air & Automated System",
