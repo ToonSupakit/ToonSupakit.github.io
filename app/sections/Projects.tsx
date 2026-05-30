@@ -22,16 +22,17 @@ const projects = [
   {
     title: "Network Monitoring & Automation System",
     description:
-      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest ML model to detect anomalies based on historical data, and features a sleek Flask-based admin dashboard with Socket.IO for real-time alerting and automated Cisco CLI remediation.",
+      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest model to detect anomalies based on historical data, and features a Flask-based web interface with Socket.IO for real-time alerting and Cisco CLI remediation.",
     icon: Activity,
     achievements: [
-      "Anomaly Detection Experiment: Combines standard network threshold checks with an Isolation Forest Machine Learning model to classify interface issues in a lab topology.",
-      "Scheduled Model Retraining: Implemented a Python script to periodically retrain the ML model using historical database metrics, allowing it to adapt to changing network traffic.",
-      "Automated & Manual Remediation: Configured triggers for automated script execution (self-healing) and allowed manual overrides directly via the Web Dashboard with automated rollback timers.",
-      "Automated Config Backups: Developed an automated config backup scheduler and Git-style Diff engine to track and compare running-config changes on Cisco switches and routers over time.",
-      "Multi-Vendor Testing (Lab Environment): Used Netmiko to translate remediation actions into vendor-specific CLI commands, successfully tested on simulated Cisco devices.",
-      "Real-time Web Dashboard: Created a Flask-based web interface with Socket.IO to display network health, broadcast syslog state changes, and visualize metrics in real time with 0-second latency.",
-      "Basic Web Security & Testing: Implemented user authentication (Admin vs. User), CSRF verification, and a centralized i18n system for dual-language (English/Thai) translation. Also wrote 71 automated unit tests using pytest."
+      "Machine Learning Anomaly Detection: Combines standard threshold checks with an Isolation Forest model to identify interface issues in a GNS3 lab topology.",
+      "Scheduled Model Retraining: Uses a Python script to periodically retrain the Isolation Forest model using historical database metrics.",
+      "Port Remediation & Rate Limiting: Executes automated or manual port bounces (shutdown/no shutdown) and rate limits on Cisco routers and switches using Netmiko.",
+      "Config Backup & Diff Engine: Saves running configurations and features a Git-like comparison tool to view config changes over time.",
+      "Real-time Dashboard: Built a Flask-based interface with Socket.IO to display device metrics and syslog state changes as they occur.",
+      "Centralized Translation: Implemented a translation engine inside the dashboard to support switching between English and Thai.",
+      "Dockerized Deployment: Configured a Docker Compose setup inside a VMware Ubuntu VM to handle database persistence and avoid hypervisor conflicts on host machines.",
+      "Security & Testing: Implemented role-based authentication (Admin/User), CSRF verification, and wrote automated unit tests using pytest."
     ],
     tools: [
       "Programming: Python, JavaScript, HTML5, CSS3",
@@ -161,6 +162,14 @@ const techLinks: Record<string, string> = {
   "AQI": "https://en.wikipedia.org/wiki/Air_quality_index",
   "US EPA": "https://www.epa.gov/",
   "SSE": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events",
+  "Docker Compose": "https://docs.docker.com/compose/",
+  "Docker": "https://www.docker.com/",
+  "VMware Workstation": "https://www.vmware.com/products/workstation-pro.html",
+  "VMware": "https://www.vmware.com/",
+  "Ubuntu Linux": "https://ubuntu.com/",
+  "Ubuntu": "https://ubuntu.com/",
+  "syslog": "https://en.wikipedia.org/wiki/Syslog",
+  "Git": "https://git-scm.com/",
 };
 
 // Sort keywords by length (longest first) to avoid partial matches
