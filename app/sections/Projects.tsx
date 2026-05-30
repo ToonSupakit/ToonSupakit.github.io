@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Network Monitoring & Automation System",
     description:
-      "Developed a network monitoring and automated remediation system for a lab environment. The system collects interface metrics (load, error rates, uptime) via SNMP, uses an Isolation Forest model to detect anomalies based on historical data, and features a Flask-based web interface with Socket.IO for real-time alerting and Cisco CLI remediation.",
+      "Developed a network monitoring and automated remediation system containerized with Docker for GNS3 labs. The system collects interface metrics via SNMP, uses an Isolation Forest model to detect traffic anomalies, and provides a Flask and Socket.IO web interface for real-time alerts and Netmiko-based Cisco CLI commands.",
     icon: Activity,
     achievements: [
       "Machine Learning Anomaly Detection: Combines standard threshold checks with an Isolation Forest model to identify interface issues in a GNS3 lab topology.",
