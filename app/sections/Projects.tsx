@@ -185,10 +185,24 @@ function highlightTech(text: string): React.ReactNode[] {
     let matchedKey = "";
 
     for (const key of sortedTechKeys) {
-      const idx = remaining.indexOf(key);
-      if (idx !== -1 && idx < earliestIndex) {
-        earliestIndex = idx;
-        matchedKey = key;
+      let startIdx = 0;
+      while (true) {
+        const idx = remaining.indexOf(key, startIdx);
+        if (idx === -1) break;
+
+        // Check boundary: characters before and after matched key must not be alphanumeric
+        const hasAlphanumericBefore = idx > 0 && /^[a-zA-Z0-9]$/.test(remaining[idx - 1]);
+        const hasAlphanumericAfter = (idx + key.length) < remaining.length && /^[a-zA-Z0-9]$/.test(remaining[idx + key.length]);
+
+        if (!hasAlphanumericBefore && !hasAlphanumericAfter) {
+          if (idx < earliestIndex) {
+            earliestIndex = idx;
+            matchedKey = key;
+          }
+          break; // Found the earliest occurrence of this key
+        }
+        
+        startIdx = idx + 1;
       }
     }
 
